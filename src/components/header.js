@@ -1,22 +1,14 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import * as styles from '../styles/header.module.scss'
 
 const Header = ({ siteTitle }) => (
   <header
-    style={{
-      margin: `0 auto`,
-      padding: `var(--space-4) var(--size-gutter)`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`,
-    }}
+    className={styles.header}
   >
     <Link
       to="/"
-      style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
-      }}
+      lclassName={styles.link}
     >
       {siteTitle}
     </Link>

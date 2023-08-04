@@ -8,17 +8,39 @@
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
+    "gatsby-plugin-sass": "^6.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-tsparticles": "^2.12.1",
+    "sass": "^1.64.2",
+    "tsparticles": "^2.12.0"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "tsparticles",
+    "ivan",
+    "Ivan",
+    "Ivan Cortes",
+    "ivan cortes",
+    "Ivan Cortez",
+    "ivan cortez",
+    "web",
+    "developer",
+    "full-stack",
+    "full stack",
+    "professional",
+    "react",
+    "react.js",
+    "reactjs",
+    "jsparticles",
+    "cortes",
+    "cortez"
   ],
   "license": "0BSD",
   "scripts": {
