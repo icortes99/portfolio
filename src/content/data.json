@@ -1,0 +1,150 @@
+{
+  "en": {
+    "hero": {
+      "title": "Hi 👋, I’m Iván Cortés",
+      "subtitle": "Full-stack web developer"
+    },
+    "navbar": [
+      {
+        "label": "Home",
+        "link": "#hero"
+      },
+      {
+        "label": "About",
+        "link": "#about"
+      },
+      {
+        "label": "Projects",
+        "link": "#projects"
+      },
+      {
+        "label": "Contact",
+        "link": "#contact"
+      }
+    ],
+    "about": {
+      "title": "About",
+      "content": "I'm a tech-savvy web developer fluent in English and Spanish. Strong in algorithms, optimization, and data structures. Effective communication and problem-solving skills for seamless collaboration with clients and teams.",
+      "cta": "Let’s work together",
+      "skills": [
+        "Javascript",
+        "Typescript",
+        "Node JS",
+        "React JS",
+        "Spring Boot",
+        "GraphQL"
+      ]
+    },
+    "projects": {
+      "title": "Projects",
+      "list": [
+        {
+          "image": "src/images/img1.jpg",
+          "type": "Solo project",
+          "title": "My to do's app",
+          "description": "Enhance your productivity with our React-based web app for to-dos. 100% frontend, effortlessly add, edit, and delete tasks. Simplify your life, stay focused on your goals. Master your tasks stylishly and effectively today!",
+          "repo": "www.github/icortes99/to-do-app",
+          "link": "www.githubpages/to-do-app",
+          "tech": [
+            "React JS",
+            "NPM",
+            "GitHub Pages"
+          ]
+        },
+        {
+          "image": "src/images/img2",
+          "type": "Solo project (with a mentor)",
+          "title": "Travel forms to Disney",
+          "description": "Fuel your agency's growth, catering to global Disney and Universal destinations. Seamlessly gather client data for magical trips. Explore the future with our app, featuring Next.js and TypeScript, combined with an array of advanced technologies.",
+          "repo": "www.github/icortes99/travel-form",
+          "link": "www.githubpages/travel-form",
+          "tech": [
+            "Typescript",
+            "Next JS",
+            "GraphQL",
+            "Nest JS",
+            "Prisma"
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "Want to work together or have any question?"
+    }
+  },
+  "es": {
+    "hero": {
+      "title": "¡Hola 👋, soy Iván Cortés!",
+      "subtitle": "Desarrollador web full-stack"
+    },
+    "navbar": [
+      {
+        "label": "Inicio",
+        "link": "#hero"
+      },
+      {
+        "label": "Acerca",
+        "link": "#about"
+      },
+      {
+        "label": "Proyectos",
+        "link": "#projects"
+      },
+      {
+        "label": "Contacto",
+        "link": "#contact"
+      }
+    ],
+    "about": {
+      "title": "Acerca de",
+      "content": "Soy un desarrollador web con conocimientos en inglés y español. Experto en algoritmos, optimización y estructuras de datos. Habilidades efectivas de comunicación y resolución de problemas para una colaboración perfecta con clientes y equipos.",
+      "cta": "¡Trabajemos juntos!",
+      "skills": [
+        "Javascript",
+        "Typescript",
+        "Node JS",
+        "React JS",
+        "Spring Boot",
+        "GraphQL"
+      ]
+    },
+    "projects": {
+      "title": "Proyectos",
+      "list": [
+        {
+          "image": "src/images/img1",
+          "type": "Proyecto en solitario",
+          "title": "Mi aplicación de tareas pendientes",
+          "description": "Mejora tu productividad con nuestra aplicación web basada en React para tareas pendientes. 100% frontend, agrega, edita y elimina tareas sin esfuerzo. Simplifica tu vida, mantente enfocado en tus objetivos. ¡Domina tus tareas con estilo y eficacia hoy mismo!",
+          "repo": "www.github/icortes99/to-do-app",
+          "link": "www.githubpages/to-do-app",
+          "tech": [
+            "React JS",
+            "NPM",
+            "GitHub Pages"
+          ]
+        },
+        {
+          "image": "src/images/img2",
+          "type": "Proyecto en solitario (con un mentor)",
+          "title": "Formularios de viaje a Disney",
+          "description": "Impulsa el crecimiento de tu agencia, atendiendo a destinos globales de Disney y Universal. Reúne de manera perfecta los datos de los clientes para viajes mágicos. Explora el futuro con nuestra aplicación, que presenta Next.js y TypeScript, combinados con una serie de tecnologías avanzadas.",
+          "repo": "www.github/icortes99/travel-form",
+          "link": "www.githubpages/travel-form",
+          "tech": [
+            "Typescript",
+            "Next JS",
+            "GraphQL",
+            "Nest JS",
+            "Prisma"
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contacto",
+      "content": "¿Quieres trabajar juntos o tienes alguna pregunta?"
+    }
+  }
+}
