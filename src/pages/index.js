@@ -6,32 +6,13 @@ import * as styles from '../styles/index.module.scss'
 import { graphql } from 'gatsby'
 import { LanguageProvider, useLanguage } from '../components/languageContext'
 import Header from '../components/header'
+import Hero from '../components/hero'
 
 export default function IndexPage({data}) {
   return(
     <LanguageProvider>
-      <div className={styles.particles}>
-        {/*console.log('data: ', data.allMarkdownRemark.edges[0].node.frontmatter.title)*/}
-        <StaticImage
-          src='../images/logo.png'
-          loading='eager'
-          width={64}
-          quality={95}
-          formats={['auto', 'webp', 'avif']}
-          alt=''
-          style={{ background: '#000000', borderRadius: '50%'}}
-        />
-        <h1>
-          Welcome to <b>Gatsby!</b>
-        </h1>
-        <p className={styles.intro}>
-          <b>Example pages:</b>{' '}
-          <br />
-          Edit <code>src/pages/index.js</code> to update this page.
-        </p>
-      </div>
-      <ul className={styles.list}></ul>
       <Header/>
+      <Hero />
       <Background />
     </LanguageProvider>
   )

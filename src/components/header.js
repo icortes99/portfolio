@@ -1,15 +1,37 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import * as styles from '../styles/header.module.scss'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useLanguage } from './languageContext'
 
-export default function Header ({ data }){
+export default function Header (){
   const { language, setLanguage } = useLanguage()
 
   const handleLanguage = ()=>{
     setLanguage(language === 'en' ? 'es' : 'en')
+    console.log('changed to: ', language)
   }
+
+  const data = useStaticQuery(graphql`
+    query {
+      contentJson {
+        en {
+          navbar {
+            label
+            link
+          }
+        }
+        es {
+          navbar {
+            label
+            link
+          }
+        }
+      }
+    }
+  `)
+
+  const about = data.contentJson[language].navbar
 
   return(
   <header className={styles.header} >
@@ -21,21 +43,17 @@ export default function Header ({ data }){
       formats={['auto', 'webp', 'avif']}
       alt=''
     />
-    <button onClick={handleLanguage}>Change</button>
     {
-      /*map(navigator => {
+      about.map((navigator, i) => {
+        return(
         <Link
-          to='/'
-          lclassName={styles.link}
+          key={i}
+          to={`${navigator.link}`}
         >
-          navigator
-        </Link>
-      })*/
-      console.log('language', language)
+          {navigator.label}
+        </Link>)
+      })
     }
+    <button onClick={handleLanguage}>Change</button>
   </header>)
 }
-
-/*export const headerData = graphql `
-  //
-`*/
