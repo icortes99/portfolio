@@ -1,12 +1,38 @@
+@import './variables.scss';
+
 .header {
   margin: 0 auto;
   padding: var(--space-4) var(--size-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2rem);
+  padding: .6rem 1rem;
+  background-color: $color-violet-glass;
+  backdrop-filter: blur($blur-filter);
+  box-shadow: 3px 6px 19px 0px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 3px 6px 19px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 3px 6px 19px 0px rgba(0,0,0,0.6);
+  z-index: 999;
 }
 
 .link {
   font-size: var(--font-sm);
   text-decoration: none;
+  color: $color-white;
+}
+
+.logo {
+  width: 1.6rem;
+  margin-left: .8rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  max-width: 35rem;
 }

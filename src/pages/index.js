@@ -1,20 +1,24 @@
 import * as React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
 import Background from '../components/background'
 import * as styles from '../styles/index.module.scss'
-import { graphql } from 'gatsby'
-import { LanguageProvider, useLanguage } from '../components/languageContext'
+import { LanguageProvider } from '../components/languageContext'
 import Header from '../components/header'
 import Hero from '../components/hero'
+import About from '../components/about'
+import Projects from '../components/projects'
 
-export default function IndexPage({data}) {
+export default function IndexPage() {
   return(
-    <LanguageProvider>
-      <Header/>
-      <Hero />
-      <Background />
-    </LanguageProvider>
+    <div className={styles.index}>
+      <LanguageProvider>
+        <Header/>
+        <Hero />
+        <About />
+        <Projects />
+        <Background />
+      </LanguageProvider>
+    </div>
   )
 }
 
@@ -23,20 +27,4 @@ export default function IndexPage({data}) {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title='Home' />
-
-/*export const query = graphql`
-  query MyQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          html
-          frontmatter {
-            date
-            title
-          }
-        }
-      }
-    }
-  }
-`*/
+export const Head = () => <Seo title="Home" />

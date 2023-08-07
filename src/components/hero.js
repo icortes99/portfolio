@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { useLanguage } from './languageContext'
+import * as styles from '../styles/hero.module.scss'
 
 export default function Hero(){
   const {language} = useLanguage()
@@ -26,8 +27,10 @@ export default function Hero(){
 
   const hero = data.contentJson[language].hero
 
-  return(<section>
-    <h1>{hero.title}</h1>
-    <h2>{hero.subtitle}</h2>
+  return(<section className={styles.hero}>
+    <div>
+      <h1>{hero.title}</h1>
+      <h2>{hero.subtitle}</h2>
+    </div>
   </section>)
 }

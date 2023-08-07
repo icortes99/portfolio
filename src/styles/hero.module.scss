@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & h1 {
+    font-weight: normal;
+    font-size: $name-size;
+  }
+
+  & h2 {
+    font-size: $job-position-size;
+    font-weight: normal;
+  }
+}

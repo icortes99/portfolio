@@ -25,7 +25,7 @@
     "about": {
       "title": "About",
       "content": "I'm a tech-savvy web developer fluent in English and Spanish. Strong in algorithms, optimization, and data structures. Effective communication and problem-solving skills for seamless collaboration with clients and teams.",
-      "cta": "Let’s work together",
+      "cta": "Let’s work together with:",
       "skills": [
         "Javascript",
         "Typescript",
@@ -39,7 +39,7 @@
       "title": "Projects",
       "list": [
         {
-          "image": "src/images/img1.jpg",
+          "image": "../images/project1.png",
           "type": "Solo project",
           "title": "My to do's app",
           "description": "Enhance your productivity with our React-based web app for to-dos. 100% frontend, effortlessly add, edit, and delete tasks. Simplify your life, stay focused on your goals. Master your tasks stylishly and effectively today!",
@@ -52,7 +52,7 @@
           ]
         },
         {
-          "image": "src/images/img2",
+          "image": "../images/project1.png",
           "type": "Solo project (with a mentor)",
           "title": "Travel forms to Disney",
           "description": "Fuel your agency's growth, catering to global Disney and Universal destinations. Seamlessly gather client data for magical trips. Explore the future with our app, featuring Next.js and TypeScript, combined with an array of advanced technologies.",
@@ -99,7 +99,7 @@
     "about": {
       "title": "Acerca de",
       "content": "Soy un desarrollador web con conocimientos en inglés y español. Experto en algoritmos, optimización y estructuras de datos. Habilidades efectivas de comunicación y resolución de problemas para una colaboración perfecta con clientes y equipos.",
-      "cta": "¡Trabajemos juntos!",
+      "cta": "Trabajemos juntos con:",
       "skills": [
         "Javascript",
         "Typescript",
@@ -113,7 +113,7 @@
       "title": "Proyectos",
       "list": [
         {
-          "image": "src/images/img1",
+          "image": "../images/project1.png",
           "type": "Proyecto en solitario",
           "title": "Mi aplicación de tareas pendientes",
           "description": "Mejora tu productividad con nuestra aplicación web basada en React para tareas pendientes. 100% frontend, agrega, edita y elimina tareas sin esfuerzo. Simplifica tu vida, mantente enfocado en tus objetivos. ¡Domina tus tareas con estilo y eficacia hoy mismo!",
@@ -126,7 +126,7 @@
           ]
         },
         {
-          "image": "src/images/img2",
+          "image": "../images/project2.png",
           "type": "Proyecto en solitario (con un mentor)",
           "title": "Formularios de viaje a Disney",
           "description": "Impulsa el crecimiento de tu agencia, atendiendo a destinos globales de Disney y Universal. Reúne de manera perfecta los datos de los clientes para viajes mágicos. Explora el futuro con nuestra aplicación, que presenta Next.js y TypeScript, combinados con una serie de tecnologías avanzadas.",

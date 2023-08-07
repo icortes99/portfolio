@@ -1,0 +1,73 @@
+@import './variables.scss';
+
+.about {
+  margin-top: $sections-separation;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: $sections-separation;
+
+  &_container {
+    max-width: $max-width;
+    display: flex;
+  }
+
+  &_title {
+    &_container {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+
+      & h2 {
+        margin: 0 .5rem 0 0;
+        width: auto;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  &_line {
+    background-color: $color-white;
+    height: $stroke-width;
+    border-radius: 1rem;
+    border: none;
+    margin-bottom: .3rem;
+    flex-grow: 1;
+  }
+
+  &_text{
+    width: calc(65% - 1.5rem);
+    padding-right: 1.5rem;
+  }
+
+  &_image {
+    width: 100%;
+    border-radius: .5rem;
+
+    &_container {
+      width: 35%;
+      display: flex;
+      height: auto;
+      align-items: center;
+    }
+  }
+
+  &_skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    &_list {
+      & li {
+        margin-bottom: .5rem;
+        font-size: $text-size;
+      }
+    }
+  }
+}
+
+p, span {
+  font-size: $text-size;
+}

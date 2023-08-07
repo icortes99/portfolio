@@ -35,25 +35,26 @@ export default function Header (){
 
   return(
   <header className={styles.header} >
-    <StaticImage 
-      src='../images/logo.png'
-      loading='eager'
-      width={64}
-      quality={95}
-      formats={['auto', 'webp', 'avif']}
-      alt=''
-    />
-    {
-      about.map((navigator, i) => {
-        return(
-        <Link
-          key={i}
-          to={`${navigator.link}`}
-        >
-          {navigator.label}
-        </Link>)
-      })
-    }
-    <button onClick={handleLanguage}>Change</button>
+      <div>
+        <StaticImage className={styles.logo}
+          src='../images/logoWebWhite.png'
+          alt='logo home'
+        />
+    </div>
+    <div className={styles.links}>
+      {
+        about.map((navigator, i) => {
+          return(
+          <Link
+            key={i}
+            to={`${navigator.link}`}
+            className={styles.link}
+          >
+            {navigator.label}
+          </Link>)
+        })
+      }
+      <button onClick={handleLanguage}>Change</button>
+    </div>
   </header>)
 }

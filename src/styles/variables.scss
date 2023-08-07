@@ -2,17 +2,19 @@
 $titles-size: 15rem;
 $color-yellow: #FFD600;
 $color-violet: #1F1924;
+$color-violet-glass: rgba(31, 25, 36, 0.7);
 $color-blue: #0B0F1D;
 $color-white: #FFFFFF;
 $opacity-glass: 70%;
-$sections-space: 5rem;
-$stroke-width: .5rem;
-$text-size: 1.4rem;
+$blur-filter: 2.5px;
+$sections-separation: 5rem;
+$stroke-width: .13rem;
+$text-size: 1.1rem;
 $social-icons-size: 1.5rem;
 
 //hero section
-$name-size: 20rem;
-$job-position-size: 17rem;
+$name-size: 2rem;
+$job-position-size: 1.5rem;
 
 //projects section
 $img-project: 7rem;
@@ -28,4 +30,4 @@ $inputs-width: calc(50% - 1rem);
 $footer-font-size: 1rem;
 
 //design variables
-$max-width: 50rem;
+$max-width: 55rem;
