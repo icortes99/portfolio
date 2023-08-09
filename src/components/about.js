@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { useLanguage } from './languageContext'
 import { StaticImage } from 'gatsby-plugin-image'
 
-export default function About(){
+export default function About({ sectionRef }){
   const data = useStaticQuery(graphql`
     query Header {
       contentJson {
@@ -32,7 +32,7 @@ export default function About(){
 
   const about = data.contentJson[language].about
 
-  return(<section className={styles.about}>
+  return(<section className={styles.about} ref={sectionRef}>
     <div className={styles.about_container}>
       <div className={styles.about_text}>
         <div className={styles.about_title_container}>

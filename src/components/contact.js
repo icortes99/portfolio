@@ -4,7 +4,7 @@ import { useLanguage } from './languageContext'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-export default function Contact(){
+export default function Contact({ sectionRef }){
   const { language } = useLanguage()
   
   const data = useStaticQuery(graphql`
@@ -41,7 +41,7 @@ export default function Contact(){
   
   const contact = data.contentJson[language].contact
 
-  return(<section className={styles.contact}>
+  return(<section className={styles.contact} ref={sectionRef}>
     <div className={styles.contact_container}>
       <div className={styles.contact_title}>
         <h2>{contact.title}</h2>

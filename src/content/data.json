@@ -7,19 +7,19 @@
     "navbar": [
       {
         "label": "Home",
-        "link": "#hero"
+        "link": "hero"
       },
       {
         "label": "About",
-        "link": "#about"
+        "link": "about"
       },
       {
         "label": "Projects",
-        "link": "#projects"
+        "link": "projects"
       },
       {
         "label": "Contact",
-        "link": "#contact"
+        "link": "contact"
       }
     ],
     "about": {
@@ -88,19 +88,19 @@
     "navbar": [
       {
         "label": "Inicio",
-        "link": "#hero"
+        "link": "hero"
       },
       {
         "label": "Acerca",
-        "link": "#about"
+        "link": "about"
       },
       {
         "label": "Proyectos",
-        "link": "#projects"
+        "link": "projects"
       },
       {
         "label": "Contacto",
-        "link": "#contact"
+        "link": "contact"
       }
     ],
     "about": {

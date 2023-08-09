@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import * as styles from '../styles/header.module.scss'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useLanguage } from './languageContext'
 
-export default function Header (){
+export default function Header ({ scrollSection }){
   const { language, setLanguage } = useLanguage()
 
   const handleLanguage = ()=>{
@@ -32,6 +32,12 @@ export default function Header (){
 
   const about = data.contentJson[language].navbar
 
+  const goToSection = (sectionName, e)=>{
+    e.preventDefault()
+    console.log('section name: ', sectionName)
+    scrollSection(sectionName)
+  }
+
   return(
   <header className={styles.header} >
       <div>
@@ -44,13 +50,14 @@ export default function Header (){
       {
         about.map((navigator, i) => {
           return(
-          <Link
+          <a
             key={i}
-            to={`${navigator.link}`}
+            href='#'
             className={styles.link}
+            onClick={(e)=> goToSection(navigator.link, e)}
           >
             {navigator.label}
-          </Link>)
+          </a>)
         })
       }
       <button onClick={handleLanguage}>Change</button>
