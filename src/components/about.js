@@ -49,7 +49,6 @@ export default function About(){
                   <li key={i}>{skill}</li>
                 )
               }
-              return(<></>)
             })
           }</ul>
           <ul className={styles.about_skills_list}>{
@@ -59,7 +58,6 @@ export default function About(){
                   <li key={i}>{skill}</li>
                 )
               }
-              return(<></>)
             })
           }</ul>
         </div>

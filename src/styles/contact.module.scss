@@ -1,0 +1,91 @@
+@import './variables.scss';
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $sections-separation;
+  height: auto;
+  width: 100%;
+
+  &_container{
+    max-width: $max-width;
+    width: $max-width;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $sections-separation;
+  }
+  
+  &_title {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+
+    & h2 {
+      margin: 0 .5rem 0 0;
+    }
+  }
+
+  &_line {
+    background-color: $color-white;
+    height: $stroke-width;
+    border-radius: 1rem;
+    border: none;
+    margin-bottom: .3rem;
+    flex-grow: 1;
+  }
+
+  &_double {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide el espacio en dos columnas iguales */
+    gap: 1.5rem;
+    width: 100%;
+
+    & input {
+      height: 2rem;
+      border: .05rem solid $color-white;
+      border-radius: .5rem;
+      padding: .3rem .8rem;
+      background: transparent;
+      background-image: linear-gradient(to top, $color-violet, transparent, transparent);
+      color: $color-white;
+      outline: none;
+      font-size: $text-size;
+
+      &::placeholder {
+        color: $color-white;
+      }
+    }
+  }
+
+  &_send {
+    margin-top: 1.5rem;
+    & textarea {
+      width: calc(100% - (.8rem * 2));
+      border: .05rem solid $color-white;
+      border-radius: .5rem;
+      padding: .3rem .8rem;
+      background: transparent;
+      background-image: linear-gradient(to top, $color-violet, transparent, transparent);
+      color: $color-white;
+      outline: none;
+      height: 6rem;
+      font-size: $text-size;
+      resize: none;
+
+      &::placeholder {
+        color: $color-white;
+      }
+    }
+  }
+
+  &_logo {
+    width: 8rem;
+
+    &_container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}

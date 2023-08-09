@@ -1,0 +1,10 @@
+@import './variables.scss';
+
+.footer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background-color: $color-violet-glass;
+  backdrop-filter: blur($blur-filter);
+}

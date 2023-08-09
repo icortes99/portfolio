@@ -9,7 +9,6 @@ export default function Header (){
 
   const handleLanguage = ()=>{
     setLanguage(language === 'en' ? 'es' : 'en')
-    console.log('changed to: ', language)
   }
 
   const data = useStaticQuery(graphql`

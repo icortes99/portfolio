@@ -70,8 +70,15 @@
     },
     "contact": {
       "title": "Contact",
-      "content": "Want to work together or have any question?"
-    }
+      "content": "Want to work together or have any question?",
+      "placeholder": [
+        "Name",
+        "Email",
+        "Message",
+        "Send"
+      ]
+    },
+    "footer": "© | Iván Cortés | 2023"
   },
   "es": {
     "hero": {
@@ -144,7 +151,14 @@
     },
     "contact": {
       "title": "Contacto",
-      "content": "¿Quieres trabajar juntos o tienes alguna pregunta?"
-    }
+      "content": "¿Quieres trabajar juntos o tienes alguna pregunta?",
+      "placeholder": [
+        "Nombre",
+        "Correo",
+        "Mensaje",
+        "Enviar"
+      ]
+    },
+    "footer": "© | Iván Cortés | 2023"
   }
 }
