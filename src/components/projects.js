@@ -2,7 +2,8 @@ import React from 'react'
 import * as styles from '../styles/projects.module.scss'
 import { useLanguage } from './languageContext'
 import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage, StaticImage, getImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
+import { GitHub, GoTo } from './svgIcons'
 
 export default function Projects(){
   const {language} = useLanguage()
@@ -22,7 +23,7 @@ export default function Projects(){
               image {
                 childImageSharp {
                   fluid {
-                    ImageSharpFluid
+                    src
                   }
                 }
               }
@@ -43,7 +44,7 @@ export default function Projects(){
               image {
                 childImageSharp {
                   fluid {
-                    ImageSharpFluid
+                    src
                   }
                 }
               }
@@ -55,8 +56,6 @@ export default function Projects(){
   `)
 
   const projects = data.contentJson[language].projects
-  //const testImage = getImage(projects.list[0].image.childImageSharp.fluid.src)
-  const testImage = getImage(projects.list[0].image.childImageSharp.fluid)
 
   return(<section className={styles.projects}>
     <div className={styles.projects_container}>
@@ -64,16 +63,44 @@ export default function Projects(){
         <h2>{projects.title}</h2>
         <hr className={styles.projects_line} />
       </div>
-      <article>
-        {console.log(projects.list[0])}
-        <GatsbyImage image={testImage} alt='project image'/>
-        {/*<StaticImage 
-          src={projects.list[0].image}
-          alt='project image'
-          loading='lazy'
-        />*/}
-        article
-      </article>
+      {projects.list.map((project, i)=>{
+        return(<article className={i % 2 === 0? `${styles.projects_art}` : `${styles.projects_art_reverse}`} key={i}>
+          <div className={styles.projects_image_container}>
+            <StaticImage 
+              className={`${styles.projects_image} ${styles.projects_image_left}`}
+              src='../images/perfil.jpg'
+              alt='project image'
+              loading='lazy'
+            />
+          </div>
+          <div className={styles.projects_data_container}>
+            <div className={i % 2 === 0? `${styles.projects_data_title}` : `${styles.projects_data_title_left}`}>
+              <p>{project.type}</p>
+              <h3>{project.title}</h3>
+            </div>
+            <div className={i % 2 === 0? `${styles.projects_data_description}` : `${styles.projects_data_description_left}`}>
+              <p>{project.description}</p>
+            </div>
+            <div>
+              <ul className={i % 2 === 0? `${styles.projects_data_skills}` : `${styles.projects_data_skills_left}`}>
+                {project.tech.map((technology, i)=>{
+                  return(<li key={i}>
+                    {technology}
+                  </li>)
+                })}
+              </ul>
+              <div className={i % 2 === 0? `${styles.projects_data_links}` : `${styles.projects_data_links_left}`}>
+                <a href={`${project.repo}`} target='_blank' rel='noreferrer'>
+                  <GitHub />
+                </a>
+                <a href={`${project.link}`} target='_blank' rel='noreferrer'>
+                  <GoTo />
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>)
+      })}
     </div>
   </section>)
 }

@@ -13,6 +13,14 @@
     width: $max-width;
     display: flex;
     flex-direction: column;
+
+    & article {
+      display: flex;
+      width: 100%;
+      position: relative;
+      margin-bottom: $sections-separation;
+      margin-top: 3rem;
+    }
   }
 
   &_title {
@@ -32,5 +40,149 @@
     border: none;
     margin-bottom: .3rem;
     flex-grow: 1;
+  }
+
+  &_image {
+    width: 100%;
+    border-radius: .5rem;
+
+    &_container {
+      width: 40%;
+    }
+
+    //&_left {
+      //background-color: yellow;
+    //}
+  }
+
+  &_data {
+    &_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 60%;
+    }
+
+    &_title { //type and title right
+      margin-right: 1rem;
+      width: calc(100% - 8rem);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-top: 2.5rem;
+      padding-right: 8rem;
+      padding-bottom: .8rem;
+
+      & > * {
+        margin: 0 0 .5rem;
+      }
+
+      &_left { //type and title left
+        margin-left: 1rem;
+        width: calc(100% - 8rem);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 8rem;
+        padding-top: 2.5rem;
+        padding-bottom: .8rem;
+
+        & > * {
+          margin: 0 0 .5rem;
+        }
+      }
+    }
+
+    &_description { //description right
+      background-color: $color-violet-glass;
+      backdrop-filter: blur($blur-filter);
+      border-radius: .5rem;
+      position: absolute;
+      right: 0;
+      top: 7.6rem;
+      width: calc(68% - 2rem);
+      //height: calc(8rem - 3rem);
+      padding: 1rem 1.5rem;
+      text-align: right;
+
+      & p {
+        margin: 0;
+        font-size: calc($text-size - 0.06rem);
+      }
+
+      &_left { //description left
+        background-color: $color-violet-glass;
+        backdrop-filter: blur($blur-filter);
+        border-radius: .5rem;
+        position: absolute;
+        left: 0;
+        top: 7.6rem;
+        width: calc(68% - 2rem);
+        //height: calc(8rem - 3rem);
+        padding: 1rem 1.5rem;
+        text-align: left;
+
+        & p {
+          margin: 0;
+          font-size: calc($text-size - 0.06rem);
+        }
+      }
+    }
+
+    &_skills { //skills right
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+
+      & li {
+        margin-right: 1.2rem;
+      }
+
+      &_left { //skills left
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 1.5rem;
+        
+        & li {
+          margin-left: 1.2rem;
+        }
+      }
+    }
+
+    &_links {
+      color: $color-white;
+      display: flex;
+      width:  calc(100% - 2rem);
+      padding-left: 2rem;
+
+      & a {
+        color: $color-white;
+        margin-right: 1.2rem;
+      }
+
+      &_left{
+        color: $color-white;
+        display: flex;
+        width:  calc(100% - 2rem);
+        justify-content: flex-end;
+        padding-right: 2rem;
+
+        & a {
+          color: $color-white;
+          margin-left: 1.2rem;
+        }
+      }
+    }
+  }
+
+  &_art {
+    &_reverse {
+      flex-direction: row-reverse;
+    }
   }
 }

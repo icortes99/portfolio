@@ -42,9 +42,9 @@
           "image": "../images/project1.png",
           "type": "Solo project",
           "title": "My to do's app",
-          "description": "Enhance your productivity with our React-based web app for to-dos. 100% frontend, effortlessly add, edit, and delete tasks. Simplify your life, stay focused on your goals. Master your tasks stylishly and effectively today!",
-          "repo": "www.github/icortes99/to-do-app",
-          "link": "www.githubpages/to-do-app",
+          "description": "Enhance your productivity with our React-based web app for to-dos. 100% frontend, effortlessly add, edit, and delete tasks. Simplify your life, stay focused on your goals. Master your tasks stylishly and effectively today! And keep track of your progess.",
+          "repo": "https://github.com/icortes99/to-do-app",
+          "link": "https://icortes99.github.io/to-do-app/",
           "tech": [
             "React JS",
             "NPM",
@@ -117,8 +117,8 @@
           "type": "Proyecto en solitario",
           "title": "Mi aplicación de tareas pendientes",
           "description": "Mejora tu productividad con nuestra aplicación web basada en React para tareas pendientes. 100% frontend, agrega, edita y elimina tareas sin esfuerzo. Simplifica tu vida, mantente enfocado en tus objetivos. ¡Domina tus tareas con estilo y eficacia hoy mismo!",
-          "repo": "www.github/icortes99/to-do-app",
-          "link": "www.githubpages/to-do-app",
+          "repo": "https://github.com/icortes99/to-do-app",
+          "link": "https://icortes99.github.io/to-do-app/",
           "tech": [
             "React JS",
             "NPM",
