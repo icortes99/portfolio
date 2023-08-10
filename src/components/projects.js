@@ -67,8 +67,8 @@ export default function Projects(){
         return(<article className={i % 2 === 0? `${styles.projects_art}` : `${styles.projects_art_reverse}`} key={i}>
           <div className={styles.projects_image_container}>
             <StaticImage 
-              className={`${styles.projects_image} ${styles.projects_image_left}`}
-              src='../images/perfil.jpg'
+              className={`${styles.projects_image}`}
+              src='../images/project1.png'
               alt='project image'
               loading='lazy'
             />

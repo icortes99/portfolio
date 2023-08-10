@@ -30,7 +30,7 @@ export default function Contact({ sectionRef }){
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    //console.log(e.target.elements)
+
     const contactData = {
       name: e.target.elements.name.value,
       email: e.target.elements.email.value,
@@ -51,7 +51,12 @@ export default function Contact({ sectionRef }){
       <form onSubmit={handleSubmit}>
         <div className={styles.contact_double}>
           <input name='name' required placeholder={contact.placeholder[0]}/>
-          <input name='email' required placeholder={contact.placeholder[1]}/>
+          <input 
+            name='email' 
+            required 
+            placeholder={contact.placeholder[1]}
+            pattern='[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}'
+          />
         </div>
         <div className={styles.contact_send}>
           <textarea name='message' required placeholder={contact.placeholder[2]}></textarea>

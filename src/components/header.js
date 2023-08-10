@@ -34,7 +34,6 @@ export default function Header ({ scrollSection }){
 
   const goToSection = (sectionName, e)=>{
     e.preventDefault()
-    console.log('section name: ', sectionName)
     scrollSection(sectionName)
   }
 
@@ -60,7 +59,9 @@ export default function Header ({ scrollSection }){
           </a>)
         })
       }
-      <button onClick={handleLanguage}>Change</button>
+      <button onClick={handleLanguage} className={styles.language}>
+        {language === 'en' ? 'Español' : 'English'}
+      </button>
     </div>
   </header>)
 }

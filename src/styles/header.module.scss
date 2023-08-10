@@ -20,9 +20,20 @@
 }
 
 .link {
-  font-size: var(--font-sm);
+  font-size: 1rem;
+  scale: 1;
   text-decoration: none;
   color: $color-white;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  &:focus {
+    outline: none;
+    scale: 1.1;
+  }
 }
 
 .logo {
@@ -35,4 +46,27 @@
   justify-content: space-around;
   width: 70%;
   max-width: 35rem;
+  align-items: center;
+}
+
+.language {
+  border: .1rem solid $color-white;
+  background-color: transparent;
+  color: $color-white;
+  outline: none;
+  scale: 1;
+  transition: 0.3s;
+  border-radius: .5rem;
+  padding: .5rem .5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Satoshi-Medium', sans-serif!important;
+
+  &:hover {
+    scale: 1.05;
+  }
+
+  &:focus {
+    scale: 1.05;
+  }
 }

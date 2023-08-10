@@ -7,8 +7,8 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions: {createPage}, graphql }) => {
-  const data = await graphql(``)
+exports.createPages = async ({ actions }) => {
+  //const data = await graphql(``)
   /*const { createPage } = actions
   createPage({
     path: "/using-dsg",

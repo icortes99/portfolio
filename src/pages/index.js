@@ -10,6 +10,7 @@ import Projects from '../components/projects'
 import Contact from '../components/contact'
 import Footer from '../components/footer'
 import { useRef } from 'react'
+import SocialMedia from '../components/socialMedia'
 
 export default function IndexPage() {
   const sectionRefs = {
@@ -43,13 +44,14 @@ export default function IndexPage() {
     <div className={styles.index}>
       <LanguageProvider>
         <Header scrollSection={scrollSection}/>
-        <Hero sectionRef={sectionRefs.hero}/>
+        <Hero scrollSection={scrollSection} sectionRef={sectionRefs.hero}/>
         <About sectionRef={sectionRefs.about}/>
         <div ref={sectionRefs.projects}></div>
         <Projects />
         <div ref={sectionRefs.contact}></div>
         <Contact />
         <Footer />
+        <SocialMedia />
         <Background />
       </LanguageProvider>
     </div>
