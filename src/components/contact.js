@@ -3,9 +3,20 @@ import * as styles from '../styles/contact.module.scss'
 import { useLanguage } from './languageContext'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useState } from 'react'
+import { useRef } from 'react'
+import Message from './messages'
 
 export default function Contact({ sectionRef }){
   const { language } = useLanguage()
+  const api = 'http://localhost:8081/'
+  const [isLoading, setIsLoading] = useState(false)
+  const [popUp, setPopUp] = useState({
+    visible: false,
+    status: 'ok',
+    message: 'Email sent'
+  })
+  const formRef = useRef(null)
   
   const data = useStaticQuery(graphql`
       query {
@@ -31,12 +42,43 @@ export default function Contact({ sectionRef }){
   const handleSubmit = (e)=>{
     e.preventDefault()
 
+    setIsLoading(true)
+
+    formRef.current.reset()
+
     const contactData = {
-      name: e.target.elements.name.value,
-      email: e.target.elements.email.value,
-      message: e.target.elements.message.value
+      'name': e.target.elements.name.value,
+      'email': e.target.elements.email.value,
+      'message': e.target.elements.message.value,
+      'language': language,
+      'code': '5fsdm8dfvfgfd126ddewfgd56r2ed32df1sgtjhfkls'
     }
-    console.log(contactData)
+
+    fetch(`${api}email/send`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contactData)
+    }).then(res => {
+      setIsLoading(false)
+      console.log(res)
+      setPopUp({
+        ...popUp,
+        visible: true
+      })
+    })
+    .catch(err => {
+      setIsLoading(false)
+      console.log(err)
+      setPopUp({
+        ...popUp,
+        visible: true,
+        status: 'bad',
+        message: 'Email was not sent'
+      })
+    })
   }
   
   const contact = data.contentJson[language].contact
@@ -48,7 +90,7 @@ export default function Contact({ sectionRef }){
         <hr className={styles.contact_line} />
       </div>
       <p>{contact.content}</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} ref={formRef}>
         <div className={styles.contact_double}>
           <input name='name' required placeholder={contact.placeholder[0]}/>
           <input 
@@ -60,7 +102,11 @@ export default function Contact({ sectionRef }){
         </div>
         <div className={styles.contact_send}>
           <textarea name='message' required placeholder={contact.placeholder[2]}></textarea>
-          <button type='submit'>{contact.placeholder[3]}</button>
+          <button type='submit'>{
+            !isLoading ?
+            contact.placeholder[3] :
+            <span className={styles.contact_loader}></span>
+          }</button>
         </div>
       </form>
       <div className={styles.contact_logo_container}>
@@ -71,5 +117,9 @@ export default function Contact({ sectionRef }){
         />
       </div>
     </div>
+    <Message 
+      data ={popUp}
+      setData={setPopUp}
+    />
   </section>)
 }

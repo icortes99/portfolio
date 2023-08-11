@@ -11,7 +11,7 @@ export default function SocialMedia(){
       <a href='https://wa.me/72768391' className={styles.social_whats} target='_blank' rel="noreferrer">
         <WhatsApp />
       </a>
-      <a href='https://www.linkedin.com/in/icortes99/' target='_blank' >
+      <a href='https://www.linkedin.com/in/icortes99/' target='_blank' rel="noreferrer">
         <LinkedIn />
       </a>
       <hr />
