@@ -9,7 +9,7 @@ import Message from './messages'
 
 export default function Contact({ sectionRef }){
   const { language } = useLanguage()
-  const api = 'http://localhost:8081/'
+  const api = 'http://localhost:8081/email/send'
   const [isLoading, setIsLoading] = useState(false)
   const [popUp, setPopUp] = useState({
     visible: false,
@@ -44,17 +44,17 @@ export default function Contact({ sectionRef }){
 
     setIsLoading(true)
 
+    const contactData = {
+      name: e.target.elements.name.value,
+      email: e.target.elements.email.value,
+      message: e.target.elements.message.value,
+      language: language,
+      code: '5fsdm8dfvfgfd126ddewfgd56r2ed32df1sgtjhfkls'
+    }
+    
     formRef.current.reset()
 
-    const contactData = {
-      'name': e.target.elements.name.value,
-      'email': e.target.elements.email.value,
-      'message': e.target.elements.message.value,
-      'language': language,
-      'code': '5fsdm8dfvfgfd126ddewfgd56r2ed32df1sgtjhfkls'
-    }
-
-    fetch(`${api}email/send`, {
+    fetch(api, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -63,15 +63,24 @@ export default function Contact({ sectionRef }){
       body: JSON.stringify(contactData)
     }).then(res => {
       setIsLoading(false)
-      console.log(res)
-      setPopUp({
-        ...popUp,
-        visible: true
-      })
+      if (res.ok){
+        setPopUp({
+          ...popUp,
+          visible: true,
+          status: 'ok',
+          message: 'Email sent'
+        })
+      } else {
+        setPopUp({
+          ...popUp,
+          visible: true,
+          status: 'bad',
+          message: 'Email was not sent'
+        })
+      }
     })
     .catch(err => {
       setIsLoading(false)
-      console.log(err)
       setPopUp({
         ...popUp,
         visible: true,
@@ -97,7 +106,7 @@ export default function Contact({ sectionRef }){
             name='email' 
             required 
             placeholder={contact.placeholder[1]}
-            pattern='[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}'
+            pattern='/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/'
           />
         </div>
         <div className={styles.contact_send}>
