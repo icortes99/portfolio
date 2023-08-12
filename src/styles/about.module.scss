@@ -77,3 +77,44 @@
 p, span {
   font-size: $text-size;
 }
+
+@media (max-width: $tablet-width) {
+  .about {
+    &_container {
+      max-width: calc(100% - (2.2rem * 2));
+      padding: 0 2.2rem;
+    }
+
+    &_skills {
+      gap: .8rem;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .about {
+    &_container {
+      flex-direction: column-reverse;
+    }
+
+    &_text {
+      width: 100%;
+    }
+
+    &_image {
+      width: calc(100% - 3rem);
+      &_container {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+    }
+
+    &_skills {
+      grid-template-columns: repeat(2, 1fr);
+      gap: .5rem;
+    }
+  }
+}

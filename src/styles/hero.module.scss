@@ -43,3 +43,10 @@
     }
   }
 }
+
+@media (max-width: $mobile-width) {
+  .hero {
+    width: calc(100% - 4rem);
+    padding: 0 2rem;
+  }
+}
