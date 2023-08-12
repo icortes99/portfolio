@@ -145,3 +145,32 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: $tablet-width) {
+  .contact {
+    &_container {
+      width: calc(100% - (2.2rem * 2));
+      padding: 0 2.2rem;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .contact {
+    &_double {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_send {
+      & textarea {
+        margin-top: .5rem;
+      }
+    }
+
+    &_logo {
+      width: 7rem;
+      margin-top: 3rem;
+    }
+  }
+}
