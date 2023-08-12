@@ -122,7 +122,7 @@
         {
           "image": "../images/project1.png",
           "type": "Proyecto en solitario",
-          "title": "Mi aplicación de tareas pendientes",
+          "title": "Mis tareas pendientes",
           "description": "Mejora tu productividad con nuestra aplicación web basada en React para tareas pendientes. 100% frontend, agrega, edita y elimina tareas sin esfuerzo. Simplifica tu vida, mantente enfocado en tus objetivos. ¡Domina tus tareas con estilo y eficacia hoy mismo!",
           "repo": "https://github.com/icortes99/to-do-app",
           "link": "https://icortes99.github.io/to-do-app/",
