@@ -1,10 +1,20 @@
 import React from 'react'
 import * as styles from '../styles/socialMedia.module.scss'
 import { GitHub, LinkedIn, WhatsApp } from './svgIcons'
+import { useState } from 'react'
 
 export default function SocialMedia(){
+  const [open, setOpen] = useState(false)
+
   return(<>
-    <section className={styles.social}>
+    <div className={ !open ? styles.social_toggle : `${styles.social_toggle} ${styles.social_toggle_open}`} onClick={()=>setOpen(!open)}>
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <section className={!open ? styles.social : `${styles.social} ${styles.social_open}`}>
       <a href='https://github.com/icortes99' target='_blank' rel="noreferrer">
         <GitHub />
       </a>
