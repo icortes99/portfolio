@@ -20,13 +20,7 @@ export default function Projects(){
               repo
               link
               description
-              image {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
+              image
             }
             title
           }
@@ -41,13 +35,7 @@ export default function Projects(){
               tech
               title
               type
-              image {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
+              image
             }
           }
         }
@@ -66,12 +54,21 @@ export default function Projects(){
       {projects.list.map((project, i)=>{
         return(<article className={i % 2 === 0? `${styles.projects_art}` : `${styles.projects_art_reverse}`} key={i}>
           <div className={styles.projects_image_container}>
-            <StaticImage 
-              className={`${styles.projects_image}`}
-              src='../images/project1.png'
-              alt='project image'
-              loading='lazy'
-            />
+            { 
+              i === 0 ? 
+              <StaticImage 
+                className={`${styles.projects_image}`}
+                src='../images/todosapp.png'
+                alt='project image'
+                loading='lazy'
+              /> : 
+              <StaticImage 
+                className={`${styles.projects_image}`}
+                src='../images/disneytravel.png'
+                alt='project image'
+                loading='lazy'
+              />
+            }
           </div>
           <div className={styles.projects_data_container}>
             <div className={i % 2 === 0? `${styles.projects_data_title}` : `${styles.projects_data_title_left}`}>

@@ -9,7 +9,9 @@ import Message from './messages'
 
 export default function Contact({ sectionRef }){
   const { language } = useLanguage()
-  const api = 'http://localhost:8081/email/send'
+  const api = `${process.env.GATSBY_API}email/send`
+  const codeApi = process.env.GATSBY_API_CODE
+  const vercelToken = process.env.VERCEL_TOKEN
   const [isLoading, setIsLoading] = useState(false)
   const [popUp, setPopUp] = useState({
     visible: false,
@@ -45,11 +47,11 @@ export default function Contact({ sectionRef }){
     setIsLoading(true)
 
     const contactData = {
-      name: e.target.elements.name.value,
-      email: e.target.elements.email.value,
-      message: e.target.elements.message.value,
-      language: language,
-      code: '5fsdm8dfvfgfd126ddewfgd56r2ed32df1sgtjhfkls'
+      'name': e.target.elements.name.value,
+      'email': e.target.elements.email.value,
+      'message': e.target.elements.message.value,
+      'language': language,
+      'code': codeApi
     }
     
     formRef.current.reset()
@@ -58,11 +60,14 @@ export default function Contact({ sectionRef }){
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Authorization': `Bearer ${vercelToken}`
       },
       body: JSON.stringify(contactData)
     }).then(res => {
       setIsLoading(false)
+      console.log('respusta del api: ', res)
       if (res.ok){
         setPopUp({
           ...popUp,
