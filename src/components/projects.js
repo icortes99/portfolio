@@ -20,7 +20,6 @@ export default function Projects(){
               repo
               link
               description
-              image
             }
             title
           }
@@ -35,7 +34,6 @@ export default function Projects(){
               tech
               title
               type
-              image
             }
           }
         }

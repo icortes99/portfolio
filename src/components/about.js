@@ -48,6 +48,8 @@ export default function About({ sectionRef }){
                 return(
                   <li key={i}>{skill}</li>
                 )
+              } else {
+                return(<></>)
               }
             })
           }</ul>
@@ -57,6 +59,8 @@ export default function About({ sectionRef }){
                 return(
                   <li key={i}>{skill}</li>
                 )
+              } else {
+                return(<></>)
               }
             })
           }</ul>
@@ -69,6 +73,8 @@ export default function About({ sectionRef }){
           alt='my picture'
           loading='lazy'
         />
+        <div className={`${styles.about_corner_border} ${styles.about_top_right}`}></div>
+        <div className={`${styles.about_corner_border} ${styles.about_bottom_left}`}></div>
       </div>
     </div>
   </section>)

@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Ivan's portfolio`,
-    description: `My web portflio blends innovation and design to craft captivating experiences`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Portfolio`,
+    description: `My web portfolio blends innovation and design to craft captivating experiences`,
+    author: `Ivan Cortes Solis`,
+    siteUrl: `https://icortes99.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-image`,
