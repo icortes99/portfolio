@@ -10,8 +10,8 @@
 module.exports = {
   siteMetadata: {
     title: `Portfolio`,
-    description: `My web portfolio blends innovation and design to craft captivating experiences`,
-    author: `Ivan Cortes Solis`,
+    description: `My web portfolio blends innovation and design to craft captivating experiences. Author: icortes99 | Ivan Cortes Solis`,
+    author: `icortes99`,
     siteUrl: `https://icortes99.netlify.app/`,
   },
   plugins: [

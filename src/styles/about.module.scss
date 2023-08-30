@@ -53,6 +53,7 @@
     border-radius: .5rem;
     transition: .3s;
     scale: 1;
+    z-index: 2;
 
     &_container {
       width: 35%;
@@ -65,10 +66,6 @@
     &:hover {
       transition: .3s;
       scale: 1.05;
-
-      &.about_top_right {
-        top: 5rem;
-      }
     }
   }
 
@@ -80,7 +77,7 @@
     border: .2rem solid $color-white;
     //box-shadow: 0px 0px $neon-blur $color-white;
     transition: .3s;
-    z-index: 1;
+    z-index: 0;
   }
 
   &_top_right {
@@ -127,6 +124,14 @@ p, span {
     &_skills {
       gap: .8rem;
     }
+
+    &_top_right {
+      top: 2.1rem;
+    }
+
+    &_bottom_left {
+      bottom: 2.1rem;
+    }
   }
 }
 
@@ -149,6 +154,16 @@ p, span {
         justify-content: center;
         margin-bottom: 2rem;
       }
+    }
+
+    &_top_right {
+      top: -.95rem;
+      right: .5rem;
+    }
+
+    &_bottom_left {
+      bottom: -.95rem;
+      left: .5rem;
     }
 
     &_skills {
