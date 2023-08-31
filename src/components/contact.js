@@ -16,6 +16,8 @@ export default function Contact({ sectionRef }){
     status: 'ok',
     message: 'Email sent'
   })
+  const emailService = process.env.EMAIL_SERVICE
+  const emailPublicKey = process.env.EMAIL_PUBLIC_KEY
   const formRef = useRef(null)
   
   const data = useStaticQuery(graphql`
@@ -44,8 +46,9 @@ export default function Contact({ sectionRef }){
 
     setIsLoading(true)
 
-    emailjs.sendForm(`${process.env.EMAIL_SERVICE}`, `${language}_template`, formRef.current, `${process.env.EMAIL_PUBLIC_KEY}`)
+    emailjs.sendForm(emailService, `${language}_template`, formRef.current, emailPublicKey)
     .then((result) => {
+      console.log(result)
         formRef.current.reset()
         setIsLoading(false)
         setPopUp({
@@ -56,7 +59,7 @@ export default function Contact({ sectionRef }){
         })
     }, (error) => {
       console.log(error)
-      console.log('env 1: ', `${process.env.EMAIL_SERVICE}`, ' env 2: ', `${process.env.EMAIL_PUBLIC_KEY}`)
+      console.log('env 1: ', emailService, ' env 2: ', emailPublicKey)
       setIsLoading(false)
       setPopUp({
         ...popUp,
