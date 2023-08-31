@@ -55,7 +55,7 @@ export default function Contact({ sectionRef }){
           message: 'Email sent'
         })
     }, (error) => {
-      console.log(error)
+      //console.log(error)
       setIsLoading(false)
       setPopUp({
         ...popUp,
