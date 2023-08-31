@@ -55,7 +55,8 @@ export default function Contact({ sectionRef }){
           message: 'Email sent'
         })
     }, (error) => {
-      //console.log(error)
+      console.log(error)
+      console.log('env 1: ', `${process.env.EMAIL_SERVICE}`, ' env 2: ', `${process.env.EMAIL_PUBLIC_KEY}`)
       setIsLoading(false)
       setPopUp({
         ...popUp,
