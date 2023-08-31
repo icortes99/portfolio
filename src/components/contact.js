@@ -6,12 +6,10 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { useState } from 'react'
 import { useRef } from 'react'
 import Message from './messages'
+import emailjs from '@emailjs/browser'
 
 export default function Contact({ sectionRef }){
   const { language } = useLanguage()
-  const api = `${process.env.GATSBY_API}email/send`
-  const codeApi = process.env.GATSBY_API_CODE
-  const vercelToken = process.env.VERCEL_TOKEN
   const [isLoading, setIsLoading] = useState(false)
   const [popUp, setPopUp] = useState({
     visible: false,
@@ -46,45 +44,18 @@ export default function Contact({ sectionRef }){
 
     setIsLoading(true)
 
-    const contactData = {
-      'name': e.target.elements.name.value,
-      'email': e.target.elements.email.value,
-      'message': e.target.elements.message.value,
-      'language': language,
-      'code': codeApi
-    }
-    
-    formRef.current.reset()
-
-    fetch(api, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Authorization': `Bearer ${vercelToken}`
-      },
-      body: JSON.stringify(contactData)
-    }).then(res => {
-      setIsLoading(false)
-      console.log('respusta del api: ', res)
-      if (res.ok){
+    emailjs.sendForm(`${process.env.EMAIL_SERVICE}`, `${language}_template`, formRef.current, `${process.env.EMAIL_PUBLIC_KEY}`)
+    .then((result) => {
+        formRef.current.reset()
+        setIsLoading(false)
         setPopUp({
           ...popUp,
           visible: true,
           status: 'ok',
           message: 'Email sent'
         })
-      } else {
-        setPopUp({
-          ...popUp,
-          visible: true,
-          status: 'bad',
-          message: 'Email was not sent'
-        })
-      }
-    })
-    .catch(err => {
+    }, (error) => {
+      console.log(error)
       setIsLoading(false)
       setPopUp({
         ...popUp,
@@ -106,9 +77,9 @@ export default function Contact({ sectionRef }){
       <p>{contact.content}</p>
       <form onSubmit={handleSubmit} ref={formRef}>
         <div className={styles.contact_double}>
-          <input name='name' required placeholder={contact.placeholder[0]}/>
+          <input name='user_name' required placeholder={contact.placeholder[0]}/>
           <input 
-            name='email' 
+            name='user_email' 
             required 
             placeholder={contact.placeholder[1]}
             pattern='/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/'
