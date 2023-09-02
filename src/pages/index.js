@@ -12,9 +12,6 @@ import Footer from '../components/footer'
 import { useRef } from 'react'
 import SocialMedia from '../components/socialMedia'
 
-const emailService = netlifyConfig.build.environment.EMAIL_SERVICE
-const emailPublicKey = netlifyConfig.build.environment.EMAIL_PUBLIC_KEY
-
 export default function IndexPage() {
   const sectionRefs = {
     hero: useRef(null),
@@ -43,7 +40,7 @@ export default function IndexPage() {
     })
   }
 
-  console.log('process: ', emailService, ', env 2: ', emailPublicKey)
+  //console.log('process: ', emailService, ', env 2: ', emailPublicKey)
 
   return(
     <div className={styles.index}>
