@@ -44,7 +44,7 @@ export default function Contact({ sectionRef }){
   const handleSubmit = (e)=>{
     e.preventDefault()
 
-    console.log('process: ', process.env)
+    console.log('process: ', process.env, process)
 
     setIsLoading(true)
 
