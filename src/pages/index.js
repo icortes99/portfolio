@@ -12,8 +12,8 @@ import Footer from '../components/footer'
 import { useRef } from 'react'
 import SocialMedia from '../components/socialMedia'
 
-const emailService = process.env.EMAIL_SERVICE
-const emailPublicKey = process.env.EMAIL_PUBLIC_KEY
+const emailService = netlifyConfig.build.environment.EMAIL_SERVICE
+const emailPublicKey = netlifyConfig.build.environment.EMAIL_PUBLIC_KEY
 
 export default function IndexPage() {
   const sectionRefs = {
