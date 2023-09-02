@@ -44,6 +44,8 @@ export default function Contact({ sectionRef }){
   const handleSubmit = (e)=>{
     e.preventDefault()
 
+    console.log('process: ', process.env)
+
     setIsLoading(true)
 
     emailjs.sendForm(emailService, `${language}_template`, formRef.current, emailPublicKey)
