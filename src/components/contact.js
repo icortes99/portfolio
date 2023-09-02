@@ -8,8 +8,8 @@ import { useRef } from 'react'
 import Message from './messages'
 import emailjs from '@emailjs/browser'
 
-const emailService = process.env.EMAIL_SERVICE
-const emailPublicKey = process.env.EMAIL_PUBLIC_KEY
+const emailService = process.env.GATSBY_EMAIL_SERVICE
+const emailPublicKey = process.env.GATSBY_EMAIL_PUBLIC_KEY
 
 export default function Contact({ sectionRef }){
   const { language } = useLanguage()
@@ -45,13 +45,10 @@ export default function Contact({ sectionRef }){
   const handleSubmit = (e)=>{
     e.preventDefault()
 
-    console.log('env 1: ', emailService, ' env 2: ', emailPublicKey)
-
     setIsLoading(true)
 
     emailjs.sendForm(emailService, `${language}_template`, formRef.current, emailPublicKey)
     .then((result) => {
-      console.log(result)
         formRef.current.reset()
         setIsLoading(false)
         setPopUp({
@@ -61,8 +58,6 @@ export default function Contact({ sectionRef }){
           message: 'Email sent'
         })
     }, (error) => {
-      console.log(error)
-      console.log('env 1: ', emailService, ' env 2: ', emailPublicKey)
       setIsLoading(false)
       setPopUp({
         ...popUp,
