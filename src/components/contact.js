@@ -45,6 +45,8 @@ export default function Contact({ sectionRef }){
   const handleSubmit = (e)=>{
     e.preventDefault()
 
+    console.log('env 1: ', emailService, ' env 2: ', emailPublicKey)
+
     setIsLoading(true)
 
     emailjs.sendForm(emailService, `${language}_template`, formRef.current, emailPublicKey)
@@ -74,9 +76,6 @@ export default function Contact({ sectionRef }){
   const contact = data.contentJson[language].contact
 
   return(<section className={styles.contact} ref={sectionRef}>
-    {
-      process.env.EMAIL_SERVICE
-    }
     <div className={styles.contact_container}>
       <div className={styles.contact_title}>
         <h2>{contact.title}</h2>

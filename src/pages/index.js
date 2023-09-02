@@ -40,8 +40,6 @@ export default function IndexPage() {
     })
   }
 
-  //console.log('process: ', emailService, ', env 2: ', emailPublicKey)
-
   return(
     <div className={styles.index}>
       <LanguageProvider>
@@ -60,9 +58,4 @@ export default function IndexPage() {
   )
 }
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
 export const Head = () => <Seo title='Ivan Cortes Solis' />
