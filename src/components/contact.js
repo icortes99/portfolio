@@ -16,8 +16,8 @@ export default function Contact({ sectionRef }){
     status: 'ok',
     message: 'Email sent'
   })
-  const emailService = process.env.EMAIL_SERVICE
-  const emailPublicKey = process.env.EMAIL_PUBLIC_KEY
+  const emailService = netlifyConfig.build.environment.EMAIL_SERVICE //process.env.EMAIL_SERVICE
+  const emailPublicKey = netlifyConfig.build.environment.EMAIL_PUBLIC_KEY //process.env.EMAIL_PUBLIC_KEY
   const formRef = useRef(null)
   
   const data = useStaticQuery(graphql`
