@@ -49,7 +49,7 @@ export default function About({ sectionRef }){
                   <li key={i}>{skill}</li>
                 )
               } else {
-                return(<div key={i}></div>)
+                return(<></>)
               }
             })
           }</ul>
@@ -60,7 +60,7 @@ export default function About({ sectionRef }){
                   <li key={i}>{skill}</li>
                 )
               } else {
-                return(<div key={i}></div>)
+                return(<></>)
               }
             })
           }</ul>

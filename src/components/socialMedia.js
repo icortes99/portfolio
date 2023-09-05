@@ -15,13 +15,29 @@ export default function SocialMedia(){
       </div>
     </div>
     <section className={!open ? styles.social : `${styles.social} ${styles.social_open}`}>
-      <a href='https://github.com/icortes99' target='_blank' rel="noreferrer">
+      <a 
+        href='https://github.com/icortes99' 
+        target='_blank' 
+        rel='noreferrer'
+        aria-label='Github'
+      >
         <GitHub />
       </a>
-      <a href='https://wa.me/72768391' className={styles.social_whats} target='_blank' rel="noreferrer">
+      <a 
+        href='https://wa.me/72768391' 
+        className={styles.social_whats} 
+        target='_blank' 
+        rel='noreferrer'
+        aria-label='Whatsapp'
+      >
         <WhatsApp />
       </a>
-      <a href='https://www.linkedin.com/in/icortes99/' target='_blank' rel="noreferrer">
+      <a 
+        href='https://www.linkedin.com/in/icortes99/' 
+        target='_blank' 
+        rel='noreferrer'
+        aria-label='Linked In'
+      >
         <LinkedIn />
       </a>
       <hr />
