@@ -51,8 +51,9 @@ export default function Header ({ scrollSection }){
     </div>
     <header className={!open ? styles.header : styles.header_open} >
         <div>
-          <StaticImage className={styles.logo}
-            src='../images/logoWebWhite.png'
+          <StaticImage 
+            className={styles.logo}
+            src='../images/logo.png'
             alt='logo home'
           />
       </div>

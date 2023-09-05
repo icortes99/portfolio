@@ -97,8 +97,9 @@ export default function Contact({ sectionRef }){
         </div>
       </form>
       <div className={styles.contact_logo_container}>
-        <StaticImage className={styles.contact_logo}
-          src='../images/logoWebWhite.png'
+        <StaticImage 
+          className={styles.contact_logo}
+          src='../images/logo.png'
           alt='logo home'
           loading='lazy'
         />

@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from '../styles/projects.module.scss'
 import { useLanguage } from './languageContext'
 import { graphql, useStaticQuery } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import { GitHub, GoTo } from './svgIcons'
 
 export default function Projects(){
@@ -20,6 +20,17 @@ export default function Projects(){
               repo
               link
               description
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: FULL_WIDTH
+                    aspectRatio: 1
+                    transformOptions: {cropFocus: ATTENTION}
+                  )
+                }
+              }
             }
             title
           }
@@ -34,6 +45,17 @@ export default function Projects(){
               tech
               title
               type
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: FULL_WIDTH
+                    aspectRatio: 1
+                    transformOptions: {cropFocus: ATTENTION}
+                  )
+                }
+              }
             }
           }
         }
@@ -52,21 +74,11 @@ export default function Projects(){
       {projects.list.map((project, i)=>{
         return(<article className={i % 2 === 0? `${styles.projects_art}` : `${styles.projects_art_reverse}`} key={i}>
           <div className={styles.projects_image_container}>
-            { 
-              i === 0 ? 
-              <StaticImage 
-                className={`${styles.projects_image}`}
-                src='../images/todosapp.png'
-                alt='project image'
-                loading='lazy'
-              /> : 
-              <StaticImage 
-                className={`${styles.projects_image}`}
-                src='../images/disneytravel.png'
-                alt='project image'
-                loading='lazy'
-              />
-            }
+            <GatsbyImage
+              image={getImage(project.image)} 
+              alt={`Project ${i} image`} 
+              className={`${styles.projects_image}`}
+            />
           </div>
           <div className={styles.projects_data_container}>
             <div className={i % 2 === 0? `${styles.projects_data_title}` : `${styles.projects_data_title_left}`}>

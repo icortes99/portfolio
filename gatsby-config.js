@@ -13,8 +13,12 @@ module.exports = {
     description: `My web portfolio blends innovation and design to craft captivating experiences. Author: icortes99 | Ivan Cortes Solis`,
     author: `icortes99`,
     siteUrl: `https://icortes99.netlify.app/`,
+    contact: 'cortes.ivan353@gmail.com',
   },
   plugins: [
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -34,20 +38,15 @@ module.exports = {
       resolve: `gatsby-transformer-json`,
       options: {},
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `icortes99-portfolio`,
+        short_name: `icortes99`,
         start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        background_color: `#0B0F1D`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
     {

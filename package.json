@@ -1,16 +1,17 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "icortes99-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My web portfolio blends innovation and design to craft captivating experiences. Author: icortes99 | Ivan Cortes Solis",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ivan Cortes Solis | icortes99",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "gatsby": "^5.11.0",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-sass": "^6.11.0",
-    "gatsby-plugin-sharp": "^5.11.0",
+    "gatsby-plugin-sharp": "^5.12.0",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-json": "^5.11.0",
     "gatsby-transformer-remark": "^6.11.0",
@@ -31,6 +32,8 @@
     "ivan cortes",
     "Ivan Cortez",
     "ivan cortez",
+    "Ivan Cortes Solis",
+    "ivan cortes solis",
     "cortes",
     "cortez",
     "icortes99",
@@ -45,13 +48,13 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/icortes99/portfolio"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/icortes99/portfolio"
   }
 }

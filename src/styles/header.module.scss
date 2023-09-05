@@ -185,6 +185,7 @@
     width: 100%;
     transition-delay: 1s;
     transition: .5s ease;
+    z-index: 999;
 
     &_toggle {
       display: block;
