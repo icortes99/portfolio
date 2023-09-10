@@ -1,16 +1,25 @@
 import * as React from 'react'
-import Seo from '../components/seo'
-import Background from '../components/background'
+import { useRef, lazy, Suspense } from 'react'
 import * as styles from '../styles/index.module.scss'
 import { LanguageProvider } from '../components/languageContext'
-import Header from '../components/header'
-import Hero from '../components/hero'
-import About from '../components/about'
-import Projects from '../components/projects'
-import Contact from '../components/contact'
-import Footer from '../components/footer'
-import { useRef } from 'react'
-import SocialMedia from '../components/socialMedia'
+import Seo from '../components/seo'
+//import Background from '../components/background'
+//import Header from '../components/header'
+//import Hero from '../components/hero'
+//import About from '../components/about'
+//import Projects from '../components/projects'
+//import Contact from '../components/contact'
+//import Footer from '../components/footer'
+//import SocialMedia from '../components/socialMedia'
+
+const Background = lazy(()=> import('../components/background'))
+const Header = lazy(()=> import('../components/header'))
+const Hero = lazy(()=> import('../components/hero'))
+const About = lazy(()=> import('../components/about'))
+const Projects = lazy(()=> import('../components/projects'))
+const Contact = lazy(()=> import('../components/contact'))
+const Footer = lazy(()=> import('../components/footer'))
+const SocialMedia = lazy(()=> import('../components/socialMedia'))
 
 export default function IndexPage() {
   const sectionRefs = {
@@ -43,16 +52,18 @@ export default function IndexPage() {
   return(
     <div className={styles.index}>
       <LanguageProvider>
-        <Header scrollSection={scrollSection}/>
-        <Hero scrollSection={scrollSection} sectionRef={sectionRefs.hero}/>
-        <About sectionRef={sectionRefs.about}/>
-        <div ref={sectionRefs.projects}></div>
-        <Projects />
-        <div ref={sectionRefs.contact}></div>
-        <Contact />
-        <Footer />
-        <SocialMedia />
-        <Background />
+        <Suspense fallback={<h2>Loading...</h2>}>
+          <Header scrollSection={scrollSection}/>
+          <Hero scrollSection={scrollSection} sectionRef={sectionRefs.hero}/>
+          <About sectionRef={sectionRefs.about}/>
+          <div ref={sectionRefs.projects}></div>
+          <Projects />
+          <div ref={sectionRefs.contact}></div>
+          <Contact />
+          <Footer />
+          <SocialMedia />
+          <Background />
+        </Suspense>
       </LanguageProvider>
     </div>
   )
