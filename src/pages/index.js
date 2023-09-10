@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useRef, lazy, Suspense } from 'react'
 import * as styles from '../styles/index.module.scss'
 import { LanguageProvider } from '../components/languageContext'
