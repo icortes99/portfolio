@@ -55,6 +55,7 @@ export default function Header ({ scrollSection }){
             className={styles.logo}
             src='../images/logo.png'
             alt='logo home'
+            loading='lazy'
           />
       </div>
       <div className={!open ? styles.links : styles.links_open}>

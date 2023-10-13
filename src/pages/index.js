@@ -52,9 +52,9 @@ export default function IndexPage() {
   return(
     <div className={styles.index}>
       <LanguageProvider>
+        <Header scrollSection={scrollSection}/>
+        <Hero scrollSection={scrollSection} sectionRef={sectionRefs.hero}/>
         <Suspense fallback={<h2>Loading...</h2>}>
-          <Header scrollSection={scrollSection}/>
-          <Hero scrollSection={scrollSection} sectionRef={sectionRefs.hero}/>
           <About sectionRef={sectionRefs.about}/>
           <div ref={sectionRefs.projects}></div>
           <Projects />
@@ -62,8 +62,8 @@ export default function IndexPage() {
           <Contact />
           <Footer />
           <SocialMedia />
-          <Background />
         </Suspense>
+        <Background />
       </LanguageProvider>
     </div>
   )

@@ -42,14 +42,14 @@ export default function About({ sectionRef }){
         <p>{about.content}</p>
         <span>{about.cta}</span>
         <div className={styles.about_skills}>
-        <ul className={styles.about_skills_list}>{
+          <ul className={styles.about_skills_list}>{
             about.skills.map((skill, i)=>{
               if(i < 3){
                 return(
                   <li key={i}>{skill}</li>
                 )
               } else {
-                return(<></>)
+                return(null)
               }
             })
           }</ul>
@@ -60,7 +60,7 @@ export default function About({ sectionRef }){
                   <li key={i}>{skill}</li>
                 )
               } else {
-                return(<></>)
+                return(null)
               }
             })
           }</ul>

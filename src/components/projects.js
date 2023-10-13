@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from '../styles/projects.module.scss'
 import { useLanguage } from './languageContext'
 import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { GitHub, GoTo } from './svgIcons'
 
 export default function Projects(){
@@ -78,6 +78,7 @@ export default function Projects(){
               image={getImage(project.image)} 
               alt={`Project ${i} image`} 
               className={`${styles.projects_image}`}
+              loading='lazy'
             />
           </div>
           <div className={styles.projects_data_container}>
