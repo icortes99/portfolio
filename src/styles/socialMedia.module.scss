@@ -68,7 +68,17 @@
     }
 
     & a {
-      transform: translateX(-2rem);
+      transform: translateX(-3.8rem);
+      background-color: $color-violet-glass;
+      backdrop-filter: blur($blur-filter);
+      border-radius: .5rem;
+      box-shadow: 3px 6px 19px 0px rgba(0,0,0,0.6);
+      -webkit-box-shadow: 3px 6px 19px 0px rgba(0,0,0,0.6);
+      -moz-box-shadow: 3px 6px 19px 0px rgba(0,0,0,0.6);width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:nth-child(2) {
         transition-delay: .1s;
