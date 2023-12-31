@@ -120,19 +120,6 @@
       "title": "Proyectos",
       "list": [
         {
-          "image": "../images/todosapp.png",
-          "type": "Proyecto en solitario",
-          "title": "Mis tareas pendientes",
-          "description": "Mejora tu productividad con nuestra aplicación web basada en React para tareas pendientes. 100% frontend, agrega, edita y elimina tareas sin esfuerzo. Simplifica tu vida, mantente enfocado en tus objetivos. ¡Domina tus tareas con estilo y eficacia hoy mismo!",
-          "repo": "https://github.com/icortes99/to-do-app",
-          "link": "https://icortes99.github.io/to-do-app/",
-          "tech": [
-            "React JS",
-            "NPM",
-            "GitHub Pages"
-          ]
-        },
-        {
           "image": "../images/disneytravel.png",
           "type": "Proyecto en solitario (con un mentor)",
           "title": "Formularios de viaje a Disney",
@@ -145,6 +132,19 @@
             "GraphQL",
             "Nest JS",
             "Prisma"
+          ]
+        },
+        {
+          "image": "../images/todosapp.png",
+          "type": "Proyecto en solitario",
+          "title": "Mis tareas pendientes",
+          "description": "Mejora tu productividad con nuestra aplicación web basada en React para tareas pendientes. 100% frontend, agrega, edita y elimina tareas sin esfuerzo. Simplifica tu vida, mantente enfocado en tus objetivos. ¡Domina tus tareas con estilo y eficacia hoy mismo!",
+          "repo": "https://github.com/icortes99/to-do-app",
+          "link": "https://icortes99.github.io/to-do-app/",
+          "tech": [
+            "React JS",
+            "NPM",
+            "GitHub Pages"
           ]
         }
       ]
