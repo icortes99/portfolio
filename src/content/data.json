@@ -39,6 +39,21 @@
       "title": "Projects",
       "list": [
         {
+          "image": "../images/disneytravel.png",
+          "type": "Solo project (with a mentor)",
+          "title": "Travel forms to Disney",
+          "description": "Fuel your agency's growth, catering to global Disney and Universal destinations. Seamlessly gather client data for magical trips. Explore the future with our app, featuring Next.js and TypeScript, combined with an array of advanced technologies.",
+          "repo": "https://github.com/icortes99/travel-form-frontend",
+          "link": "https://travel-forms.vercel.app/",
+          "tech": [
+            "Typescript",
+            "Next JS",
+            "GraphQL",
+            "Nest JS",
+            "Prisma"
+          ]
+        },
+        {
           "image": "../images/todosapp.png",
           "type": "Solo project",
           "title": "My to do's app",
@@ -49,21 +64,6 @@
             "React JS",
             "NPM",
             "GitHub Pages"
-          ]
-        },
-        {
-          "image": "../images/disneytravel.png",
-          "type": "Solo project (with a mentor)",
-          "title": "Travel forms to Disney",
-          "description": "Fuel your agency's growth, catering to global Disney and Universal destinations. Seamlessly gather client data for magical trips. Explore the future with our app, featuring Next.js and TypeScript, combined with an array of advanced technologies.",
-          "repo": "www.github/icortes99/travel-form",
-          "link": "www.githubpages/travel-form",
-          "tech": [
-            "Typescript",
-            "Next JS",
-            "GraphQL",
-            "Nest JS",
-            "Prisma"
           ]
         }
       ]
